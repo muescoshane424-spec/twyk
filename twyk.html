@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+    body {
+        background: linear-gradient(to right, #ff758c, #ff7eb3);
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        width: 330px;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        color: #ff4d6d;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        background: #ff4d6d;
+        color: white;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #e6004c;
+    }
+
+    #message {
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    /* ❤️ HEART ANIMATION */
+    .heart {
+        font-size: 60px;
+        margin-top: 20px;
+        display: none;
+        animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+        0% { transform: scale(1); }
+        25% { transform: scale(1.2); }
+        50% { transform: scale(1); }
+        75% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>💖 Hi Love</h2>
+    <p>One question just for you…</p>
+
+    <p><strong>Do you love me?</strong></p>
+
+    <input type="text" id="answer" placeholder="Type your answer">
+    <button onclick="check()">Submit</button>
+
+    <p id="message"></p>
+
+    <!-- ❤️ HEART BUTTON -->
+    <button onclick="showHeart()">Show My Heart</button>
+
+    <div class="heart" id="heart">❤️</div>
+</div>
+
+<script>
+function check() {
+    const answer = document.getElementById("answer").value.toLowerCase();
+    const message = document.getElementById("message");
+
+    if (answer.includes("yes")) {
+        message.innerHTML = "🥺❤️ I love you more than words can say.";
+        message.style.color = "green";
+    } else {
+        message.innerHTML = "😔 Still… I choose you every day.";
+        message.style.color = "red";
+    }
+}
+
+function showHeart() {
+    document.getElementById("heart").style.display = "block";
+}
+</script>
+
+</body>
+</html>
